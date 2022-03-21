@@ -1,54 +1,29 @@
-// https://fonts.google.com/specimen/Red+Hat+Mono
-// font-family: 'Red Hat Mono', monospace;
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300;400;500;600;700&display=swap');
+/*==================================================
 
-// https://fonts.google.com/specimen/Quicksand
-// font-family: 'Quicksand', sans-serif;
+https://fonts.google.com/specimen/Red+Hat+Mono  (font-family: 'Red Hat Mono', monospace;)
+https://fonts.google.com/specimen/Quicksand     (font-family: 'Quicksand', sans-serif;)
+
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-$primary: #63ffda;
-$primary-dark: #00cf9f;
-$secondary: #0a192f;
-$light-stale: #ccd6f6;
-$lighter-stale: transparentize($light-stale, 0.5);
+@import './core/variables.scss';
+@import './core/utils.scss';
+@import './core/mixins.scss';
 
-$container-padding: 40px;
-
-@mixin abs-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-@mixin neon-shadow($color: $primary) {
-	box-shadow: 0 0 20px 0 transparentize($color, $amount: 0.4);
-}
-
-// utils
-// ==================
-.color-primary {
-	color: $primary;
-}
-
-.text-header {
-	font-size: 80px;
-	font-weight: 600;
-	color: $light-stale;
-}
-
-.text-sub-header {
-	color: transparentize($color: $light-stale, $amount: 0.25);
-	font-size: 19px;
-	line-height: 1.35;
-}
-// ==================
+// other
+@import './other/tabs.scss';
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Quicksand', sans-serif;
-	color: white;
+
+	&:not(span) {
+		color: white;
+	}
 }
 
 body {
@@ -257,6 +232,7 @@ section#second-section {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			border-radius: 5px;
 		}
 
 		.overlay {
@@ -275,6 +251,10 @@ section#second-section {
 
 		h1 {
 			margin-bottom: 10px;
+		}
+
+		.tabs {
+			margin-top: 40px;
 		}
 	}
 }

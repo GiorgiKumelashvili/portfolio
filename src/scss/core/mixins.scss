@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+@mixin abs-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin neon-shadow($color: $primary) {
+	box-shadow: 0 0 20px 0 transparentize($color, $amount: 0.4);
+}
+
+@mixin text-secondary {
+	color: transparentize($color: $light-stale, $amount: 0.25);
+	font-size: 19px;
+	line-height: 1.35;
+}

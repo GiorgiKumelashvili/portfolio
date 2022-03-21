@@ -1,0 +1,16 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.color-primary {
+	color: $primary;
+}
+
+.text-header {
+	font-size: 80px;
+	font-weight: 600;
+	color: $light-stale;
+}
+
+.text-sub-header {
+	@include text-secondary();
+}
