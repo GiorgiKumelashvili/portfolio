@@ -15,3 +15,35 @@
 	font-size: 19px;
 	line-height: 1.35;
 }
+
+@mixin small-svg($color: white, $hover-color: $primary, $transition-time: 400ms) {
+	svg {
+		cursor: pointer;
+		width: 25px;
+		height: 25px;
+		transition: all $transition-time;
+
+		path,
+		rect,
+		circle,
+		polyline,
+		line {
+			transition: all $transition-time;
+			color: $color;
+		}
+
+		&:hover {
+			transition: all $transition-time;
+			@content;
+
+			path,
+			rect,
+			circle,
+			polyline,
+			line {
+				transition: all $transition-time;
+				color: $hover-color;
+			}
+		}
+	}
+}

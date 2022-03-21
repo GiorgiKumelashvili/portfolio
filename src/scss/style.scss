@@ -68,27 +68,8 @@ body {
 		padding: 10px;
 	}
 
-	svg {
-		width: 25px;
-		height: 25px;
-		transition: all 600ms;
-
-		&:hover {
-			transition: all 600ms;
-			transform: translateX(8px);
-
-			path,
-			rect,
-			circle {
-				color: $primary;
-			}
-		}
-	}
-
-	path,
-	rect,
-	circle {
-		color: $lighter-stale;
+	@include small-svg($lighter-stale) {
+		transform: translateX(8px);
 	}
 
 	&::after {
@@ -255,6 +236,111 @@ section#second-section {
 
 		.tabs {
 			margin-top: 40px;
+		}
+	}
+}
+
+section#third-section {
+	display: flex;
+	justify-content: center;
+
+	.content {
+		padding-top: 200px;
+	}
+
+	.text-header {
+		// override font size
+		font-size: 50px;
+		text-align: center;
+	}
+
+	.sub-header a {
+		cursor: pointer;
+		text-decoration: none;
+		$local-dimmed-color: transparentize($primary, 0.4);
+		color: $local-dimmed-color;
+		font-family: 'Red Hat Mono', monospace;
+		font-size: 20px;
+		font-weight: 500;
+		transition: all 600ms;
+		margin-top: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		svg {
+			margin-left: 10px;
+			height: 25px;
+			width: 25px;
+
+			path {
+				transition: all 600ms;
+				color: $local-dimmed-color;
+			}
+		}
+
+		&:hover {
+			&,
+			svg path {
+				transition: all 600ms;
+				color: $primary;
+			}
+		}
+	}
+
+	.projects-container {
+		margin-top: 50px;
+		display: grid;
+		grid-template-columns: auto auto auto;
+		gap: 15px;
+	}
+
+	.card {
+		$transition-time: 400ms;
+
+		cursor: pointer;
+		background-color: $secondary-light;
+		border-radius: 8px;
+		width: 380px;
+		padding: 40px;
+		transition: all $transition-time;
+
+		&:hover {
+			transition: all $transition-time;
+			transform: translateY(-10px);
+
+			.content-container h2 {
+				transition: all $transition-time;
+				color: $primary;
+			}
+		}
+
+		.header-container {
+			@include small-svg($light-stale);
+		}
+
+		.content-container {
+			margin: 20px 0;
+
+			h2 {
+				transition: all $transition-time;
+				margin-bottom: 10px;
+			}
+		}
+
+		.footer-container {
+			ul {
+				display: flex;
+			}
+
+			li {
+				list-style: none;
+				padding: 10px;
+
+				&:first-child {
+					padding-left: 0;
+				}
+			}
 		}
 	}
 }
