@@ -52,7 +52,7 @@ body {
 	}
 }
 
-.left {
+.right {
 	@include small-svg(white);
 	position: fixed;
 	top: 50%;
@@ -164,7 +164,7 @@ section#first-section {
 
 	.content {
 		max-width: $local-max-width;
-		padding-top: 400px;
+		padding-top: 200px;
 	}
 
 	.header {
@@ -199,6 +199,15 @@ section#second-section {
 		position: relative;
 		height: auto;
 		flex: 2;
+		margin: 100px 0;
+		user-select: none;
+
+		&:hover {
+			.overlay {
+				transition: all 600ms;
+				opacity: 0;
+			}
+		}
 
 		img {
 			width: 100%;
@@ -214,19 +223,116 @@ section#second-section {
 			right: 0;
 			bottom: 0;
 			background-color: transparentize($color: $primary-dark, $amount: 0.6);
+			transition: all 600ms;
 		}
 	}
 
 	.about-me-container {
-		padding: 50px 50px;
+		padding: 0px 50px;
 		flex: 3;
 
 		h1 {
-			margin-bottom: 10px;
+			margin: 0;
+			margin-block-start: 0;
 		}
 
 		.tabs {
 			margin-top: 40px;
+		}
+	}
+
+	.about-me-skills-list-header {
+		font-size: 30px;
+		color: $light-stale;
+		margin: 20px 0;
+	}
+
+	@mixin local-mixin($color, $symbol: '▹') {
+		&::before {
+			content: $symbol;
+			position: absolute;
+			left: 0;
+			bottom: 10px;
+			color: $color;
+			font-size: 25px;
+			line-height: 12px;
+
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	$local-knows: $primary;
+	$local-amateur: rgb(204, 204, 0);
+	$local-learning: rgb(208, 53, 255);
+
+	// inside tabs
+	.about-me-skills-list {
+		display: grid;
+		column-gap: 20px;
+		row-gap: 10px;
+		grid-template-columns: 1fr 1fr 1fr;
+
+		li {
+			width: 100%;
+			position: relative;
+
+			text-align: start;
+			padding-left: 30px;
+			display: flex;
+			align-items: center;
+			font-size: 20px;
+			@include local-mixin($local-knows);
+		}
+
+		.no-arrow {
+			&::before {
+				content: none;
+				display: none;
+			}
+		}
+
+		.learning-amateur {
+			@include local-mixin($local-amateur);
+		}
+
+		.learning-process {
+			@include local-mixin($local-learning);
+		}
+	}
+
+	.main-skill-section {
+		position: relative;
+	}
+
+	.color-explanation-container {
+		position: absolute;
+		right: -100px;
+		top: 40px;
+
+		ul {
+			display: flex;
+			flex-direction: column;
+		}
+
+		li {
+			color: $primary;
+			width: 100%;
+			position: relative;
+			text-align: start;
+			padding-left: 30px;
+			display: flex;
+			align-items: center;
+			font-size: 20px;
+			@include local-mixin($local-knows, 'o');
+		}
+
+		.learning-amateur {
+			@include local-mixin($local-amateur, 'o');
+		}
+
+		.learning-process {
+			@include local-mixin($local-learning, 'o');
 		}
 	}
 }
