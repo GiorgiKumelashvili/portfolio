@@ -5,6 +5,10 @@
 	color: $primary;
 }
 
+.color-primary-dimmed {
+	color: transparentize($color: rgb(204, 204, 0), $amount: 0.2);
+}
+
 .text-header {
 	font-size: 80px;
 	font-weight: 600;
@@ -13,4 +17,8 @@
 
 .text-sub-header {
 	@include text-secondary();
+}
+
+.mt-0 {
+	margin-top: 0 !important;
 }

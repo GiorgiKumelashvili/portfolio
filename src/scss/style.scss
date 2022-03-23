@@ -107,12 +107,8 @@ header {
 		li {
 			padding: 10px 15px;
 			@include abs-center();
-		}
-
-		a {
 			display: inline-block;
 			text-decoration: none;
-			color: $light-stale;
 			position: relative;
 			transition: all 1000ms;
 			font-family: 'Red Hat Mono', monospace;
@@ -191,7 +187,7 @@ section#second-section {
 	.content {
 		max-width: 1200px;
 		max-height: 800px;
-		// padding-top: 200px;
+		padding-top: 200px;
 		display: flex;
 	}
 
@@ -199,7 +195,6 @@ section#second-section {
 		position: relative;
 		height: auto;
 		flex: 2;
-		margin: 100px 0;
 		user-select: none;
 
 		&:hover {
@@ -231,20 +226,16 @@ section#second-section {
 		padding: 0px 50px;
 		flex: 3;
 
-		h1 {
+		// @override
+		.text-header {
 			margin: 0;
 			margin-block-start: 0;
+			font-size: 50px;
 		}
 
 		.tabs {
 			margin-top: 40px;
 		}
-	}
-
-	.about-me-skills-list-header {
-		font-size: 30px;
-		color: $light-stale;
-		margin: 20px 0;
 	}
 
 	@mixin local-mixin($color, $symbol: '▹') {
@@ -301,6 +292,12 @@ section#second-section {
 		}
 	}
 
+	.about-me-skills-list-header {
+		font-size: 30px;
+		color: $light-stale;
+		margin: 20px 0;
+	}
+
 	.main-skill-section {
 		position: relative;
 	}
@@ -333,6 +330,74 @@ section#second-section {
 
 		.learning-process {
 			@include local-mixin($local-learning, 'o');
+		}
+	}
+
+	//@at-root
+
+	.jobs-section {
+		.job-container {
+			margin-top: 30px;
+		}
+
+		.title {
+			margin-bottom: 3px;
+		}
+
+		.subtitle {
+			margin-bottom: 3px;
+		}
+
+		.date {
+			margin-left: 10px;
+		}
+
+		.jobs-descr-container {
+			margin-top: 10px;
+		}
+
+		.job-descr {
+			margin-top: 5px;
+		}
+
+		.details-text {
+			cursor: pointer;
+			margin-top: 20px;
+			text-align: end;
+			color: $light-stale;
+			transition: all 600ms;
+
+			&:hover {
+				transition: all 600ms;
+				color: $primary;
+			}
+		}
+	}
+
+	.award-section {
+		.title {
+			margin-bottom: 3px;
+		}
+
+		.subtitle {
+			margin-bottom: 3px;
+		}
+
+		a {
+			@include small-svg($primary, $primary, 400, 20px, 20px);
+			cursor: pointer;
+			display: inline-block;
+			text-decoration: none;
+			text-align: end;
+
+			span {
+				display: flex;
+				align-items: center;
+			}
+
+			svg {
+				margin-left: 5px;
+			}
 		}
 	}
 }

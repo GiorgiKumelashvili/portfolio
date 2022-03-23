@@ -16,11 +16,17 @@
 	line-height: 1.35;
 }
 
-@mixin small-svg($color: white, $hover-color: $primary, $transition-time: 400ms) {
+@mixin small-svg(
+	$color: white,
+	$hover-color: $primary,
+	$transition-time: 400ms,
+	$width: 25px,
+	$height: 25px
+) {
 	svg {
 		cursor: pointer;
-		width: 25px;
-		height: 25px;
+		width: $width;
+		height: $height;
 		transition: all $transition-time;
 
 		path,
