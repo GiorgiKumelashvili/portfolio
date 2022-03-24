@@ -10,7 +10,7 @@
  * (+) scroll from tabs
  * (+) CV (plus inside about me)
  * (+) correct social links on right
- * ( ) mail on old left implement
+ * (+) mail on old left implement
  * ( ) image in about me
  * ( ) projects
  *
