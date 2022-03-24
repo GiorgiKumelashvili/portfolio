@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"watch": "parcel src/index.html --open --no-cache"
+		"watch": "parcel src/index.html --open --no-cache",
+		"build": "parcel build src/index.html --public-url ./"
 	},
 	"devDependencies": {
 		"@parcel/transformer-sass": "2.3.2",
