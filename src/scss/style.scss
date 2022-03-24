@@ -124,10 +124,11 @@ body {
 
 header {
 	position: fixed;
-
+	z-index: 10;
 	width: 100%;
 	user-select: none;
 	padding: 20px $container-padding;
+	transition: all 600ms;
 
 	nav {
 		display: flex;
@@ -252,6 +253,10 @@ section#second-section {
 				transition: all 600ms;
 				opacity: 0;
 			}
+			.underlay {
+				transition: all 600ms;
+				transform: initial;
+			}
 		}
 
 		img {
@@ -268,6 +273,18 @@ section#second-section {
 			right: 0;
 			bottom: 0;
 			background-color: transparentize($color: $primary-dark, $amount: 0.6);
+			transition: all 600ms;
+		}
+
+		.underlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			transform: translateX(-20px) translateY(20px);
+			bottom: 0;
+			border: 3px solid transparentize($color: $primary-dark, $amount: 0.3);
+			z-index: -1;
 			transition: all 600ms;
 		}
 	}
@@ -639,4 +656,13 @@ footer {
 	svg {
 		margin-left: 10px;
 	}
+}
+
+.scroll {
+	transition: all 600ms;
+	opacity: 0;
+}
+
+.scroll-background {
+	background-color: black;
 }
