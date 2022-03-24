@@ -529,6 +529,10 @@ section#third-section {
 
 		.header-container {
 			@include small-svg($light-stale);
+
+			a {
+				text-decoration: none;
+			}
 		}
 
 		.content-container {
