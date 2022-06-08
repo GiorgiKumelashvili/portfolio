@@ -4,6 +4,6 @@
 technologies include
 
 * Html
-* Sccc
+* Scss
 * Ts
 * Parcel
