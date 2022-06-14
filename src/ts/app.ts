@@ -2,22 +2,56 @@
 // https://github.com/michalsnik/aos/tree/v2
 // https://michalsnik.github.io/aos/
 
-/**
- * @todo
- * responsivnes (fuuuuuuck !!!)
- */
+// /**
+//  * @todo
+//  * responsivnes (fuuuuuuck !!!)
+//  */
+
+const openSidebar = (sidenavContent: HTMLElement | null, sidenavContainer: HTMLElement | null) => {
+  if (sidenavContent) {
+    sidenavContent.style.transform = 'translateX(0px)';
+  }
+
+  if (sidenavContainer) {
+    sidenavContainer.style.visibility = 'visible';
+    sidenavContainer.style.opacity = '1';
+  }
+};
+
+const closeSidebar = (sidenavContent: HTMLElement | null, sidenavContainer: HTMLElement | null) => {
+  if (sidenavContent) {
+    sidenavContent.style.transform = 'translateX(400px)';
+  }
+
+  if (sidenavContainer) {
+    sidenavContainer.style.visibility = 'hidden';
+    sidenavContainer.style.opacity = '1';
+  }
+};
 
 window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('nav-second-section')?.addEventListener('click', () => {
-    document.getElementById('second-section')?.scrollIntoView({ behavior: 'smooth' });
+  const sidenavContainer = document.querySelector<HTMLElement>('.nav-link-container-mobile-blur');
+  const sidenavContent = document.querySelector<HTMLElement>('.nav-link-container-mobile');
+
+  document.querySelectorAll('.nav-second-section').forEach(el => {
+    el?.addEventListener('click', () => {
+      document.getElementById('second-section')?.scrollIntoView({ behavior: 'smooth' });
+      closeSidebar(sidenavContent, sidenavContainer);
+    });
   });
 
-  document.getElementById('nav-third-section')?.addEventListener('click', () => {
-    document.getElementById('third-section')?.scrollIntoView({ behavior: 'smooth' });
+  document.querySelectorAll('.nav-third-section').forEach(el => {
+    el?.addEventListener('click', () => {
+      document.getElementById('third-section')?.scrollIntoView({ behavior: 'smooth' });
+      closeSidebar(sidenavContent, sidenavContainer);
+    });
   });
 
-  document.getElementById('nav-fourth-section')?.addEventListener('click', () => {
-    document.getElementById('fourth-section')?.scrollIntoView({ behavior: 'smooth' });
+  document.querySelectorAll('.nav-fourth-section').forEach(el => {
+    el?.addEventListener('click', () => {
+      document.getElementById('fourth-section')?.scrollIntoView({ behavior: 'smooth' });
+      closeSidebar(sidenavContent, sidenavContainer);
+    });
   });
 });
 
@@ -54,30 +88,8 @@ window.addEventListener('scroll', () => {
   const sidenavContainer = document.querySelector<HTMLElement>('.nav-link-container-mobile-blur');
   const sidenavContent = document.querySelector<HTMLElement>('.nav-link-container-mobile');
 
-  const open = () => {
-    if (sidenavContent) {
-      sidenavContent.style.transform = 'translateX(0px)';
-    }
-
-    if (sidenavContainer) {
-      sidenavContainer.style.visibility = 'visible';
-      sidenavContainer.style.opacity = '1';
-    }
-  };
-
-  const close = () => {
-    if (sidenavContent) {
-      sidenavContent.style.transform = 'translateX(400px)';
-    }
-
-    if (sidenavContainer) {
-      sidenavContainer.style.visibility = 'hidden';
-      sidenavContainer.style.opacity = '1';
-    }
-  };
-
-  burgerIcon?.addEventListener('click', open);
-  closeSidebarIcon?.addEventListener('click', close);
-  sidenavContainer?.addEventListener('click', close);
+  burgerIcon?.addEventListener('click', () => openSidebar(sidenavContent, sidenavContainer));
+  closeSidebarIcon?.addEventListener('click', () => closeSidebar(sidenavContent, sidenavContainer));
+  sidenavContainer?.addEventListener('click', () => closeSidebar(sidenavContent, sidenavContainer));
 })();
 
