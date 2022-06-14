@@ -1,0 +1,259 @@
+@import './core/variables.scss';
+@import './core/variables.scss';
+
+.nav-burger-container {
+  display: none;
+}
+
+.nav-link-container-mobile-blur {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-in-out;
+  transition-delay: 0s;
+
+  cursor: pointer;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.nav-link-container-mobile {
+  transform: translateX(400px);
+  transition: transform 0.4s ease-in;
+  transition-delay: 0s;
+
+  z-index: 11;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-width: 400px;
+  background-color: $secondary-lighter;
+
+  .svg-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+
+    @include small-svg($primary, $primary, 400, 40px, 40px);
+    svg {
+      fill: $primary;
+
+      &:hover {
+        fill: $primary-dark;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    flex-direction: column;
+    display: flex;
+  }
+
+  li {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    @include abs-center();
+    padding: 10px 15px;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    transition: all 1000ms;
+    font-family: 'Red Hat Mono', monospace;
+    text-align: center;
+
+    &:hover {
+      color: $primary;
+      transition: all 1000ms;
+    }
+  }
+
+  a.nav-resume {
+    margin: 30px auto;
+    height: 50px;
+    max-width: 150px;
+    font-size: 1rem;
+
+    line-height: 1;
+    border: 1px solid transparentize($color: $primary, $amount: 0.5);
+    color: $primary;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 300ms;
+    transition-delay: 200ms;
+    text-decoration: none;
+    @include abs-center();
+
+    &:hover {
+      background-color: $primary;
+      transform: translateY(-4px);
+      transition: all 300ms;
+      color: black;
+      @include neon-shadow();
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  main {
+    padding: 0 20px;
+  }
+
+  main section {
+    height: auto;
+  }
+
+  section#second-section {
+    .content {
+      max-height: initial;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    .about-me-image-container {
+      margin-top: 100px;
+
+      img {
+        height: 800px;
+        width: 500px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  section#third-section {
+    .projects-container {
+      grid-template-columns: auto auto;
+    }
+
+    .card {
+      width: 400px;
+    }
+  }
+
+  section#second-section .color-explanation-container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  header {
+    .nav-link-container {
+      display: none;
+    }
+
+    .nav-logo-container {
+      height: 40px;
+    }
+
+    .nav-burger-container {
+      display: flex;
+      align-items: center;
+
+      @include small-svg($primary, $primary, 400, 40px, 40px);
+      svg {
+        fill: $primary;
+
+        &:hover {
+          fill: $primary-dark;
+        }
+      }
+    }
+  }
+
+  .right,
+  .left {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  section#first-section {
+    margin-bottom: 40px;
+
+    .header-name {
+      font-size: 50px;
+    }
+  }
+
+  section#second-section {
+    .content {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    .about-me-image-container {
+      margin-top: 100px;
+
+      img {
+        height: 500px;
+        width: 300px;
+      }
+    }
+
+    .about-me-container {
+      padding: 0px;
+
+      .text-header {
+        font-size: 50px;
+      }
+    }
+
+    .about-me-skills-list {
+      display: grid;
+      column-gap: 5px;
+      row-gap: 10px;
+      grid-template-columns: 1fr 1fr;
+
+      .no-arrow {
+        display: none;
+      }
+    }
+  }
+
+  section#third-section {
+    .projects-container {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 15px;
+    }
+
+    .card {
+      width: 100%;
+      padding: 40px;
+    }
+  }
+
+  section#fourth-section {
+    .text-header {
+      font-size: 40px;
+    }
+
+    .sub-header a {
+      margin: 20px auto;
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  section#third-section {
+    margin-bottom: 100px;
+    .card {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+
+  section#fourth-section {
+    height: initial;
+    margin-bottom: 150px;
+  }
+}
+

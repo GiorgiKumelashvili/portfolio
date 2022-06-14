@@ -7,153 +7,161 @@ $accent-desaturated: desaturate($accent, 85%);
 
 $tab-count: 4;
 $breakpoints: (
-	medium: #{$tab-count * 250px},
-	small: #{$tab-count * 150px},
+  medium: #{$tab-count * 250px},
+  small: #{$tab-count * 150px},
 );
 
 .tabs {
-	position: relative;
-	height: 250px;
-	border-radius: 5px;
-	min-width: #{$tab-count * 60px};
+  position: relative;
+  // height: 250px;
+  border-radius: 5px;
+  min-width: #{$tab-count * 60px};
 
-	input[name='tab-control'] {
-		display: none;
-	}
+  input[name='tab-control'] {
+    display: none;
+  }
 
-	ul {
-		list-style-type: none;
-		padding-left: 0;
-		display: flex;
-		flex-direction: row;
-		margin-bottom: 10px;
-		justify-content: space-between;
-		align-items: flex-end;
-		flex-wrap: wrap;
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
 
-		li {
-			box-sizing: border-box;
-			flex: 1;
-			width: #{calc(100% / $tab-count)};
-			// padding: 0 10px;
-			text-align: center;
+    li {
+      box-sizing: border-box;
+      flex: 1;
+      width: #{calc(100% / $tab-count)};
+      // padding: 0 10px;
+      text-align: center;
 
-			label {
-				cursor: pointer;
-				color: $accent-desaturated;
-				padding: 5px auto;
-				transition: all 0.2s ease-in-out;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				display: block;
+      label {
+        cursor: pointer;
+        color: $accent-desaturated;
+        padding: 5px auto;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
 
-				@include text-secondary();
+        @include text-secondary();
 
-				br {
-					display: none;
-				}
+        br {
+          display: none;
+        }
 
-				svg {
-					fill: $accent-desaturated;
-					height: 1.2em;
-					vertical-align: bottom;
-					margin-right: 0.2em;
-					transition: all 0.2s ease-in-out;
-				}
+        svg {
+          fill: $accent-desaturated;
+          height: 1.2em;
+          vertical-align: bottom;
+          margin-right: 0.2em;
+          transition: all 0.2s ease-in-out;
+        }
 
-				&:hover,
-				&:focus,
-				&:active {
-					outline: 0;
-					color: lighten($accent-desaturated, 15%);
-					svg {
-						fill: lighten($accent-desaturated, 15%);
-					}
-				}
-			}
-		}
-	}
+        &:hover,
+        &:focus,
+        &:active {
+          outline: 0;
+          color: lighten($accent-desaturated, 15%);
+          svg {
+            fill: lighten($accent-desaturated, 15%);
+          }
+        }
+      }
+    }
+  }
 
-	.slider {
-		position: relative;
-		width: #{calc(100% / $tab-count)};
-		transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+  .slider {
+    position: relative;
+    width: #{calc(100% / $tab-count)};
+    transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
 
-		.indicator {
-			position: relative;
-			width: 100%;
-			height: 1px;
-			background: $accent;
-			border-radius: 2px;
-		}
-	}
+    .indicator {
+      position: relative;
+      width: 100%;
+      height: 1px;
+      background: $accent;
+      border-radius: 2px;
+    }
+  }
 
-	.tab-content {
-		height: 100%;
-		padding-top: 20px;
+  .tab-content {
+    height: 100%;
+    padding-top: 20px;
 
-		section {
-			display: none; // for animation
+    section {
+      display: none; // for animation
 
-			height: 100%;
-			animation: content 0.3s ease-in-out 1 normal;
-		}
-	}
+      height: 100%;
+      animation: content 0.3s ease-in-out 1 normal;
+    }
+  }
 
-	input[name='tab-control'] {
-		// selectors relative to radio inputs
-		$label-selector: '~ ul > li';
-		$slider-selector: '~ .slider';
-		$content-selector: '~ .tab-content > section';
+  input[name='tab-control'] {
+    // selectors relative to radio inputs
+    $label-selector: '~ ul > li';
+    $slider-selector: '~ .slider';
+    $content-selector: '~ .tab-content > section';
 
-		@for $i from 1 through $tab-count {
-			&:nth-of-type(#{$i}):checked {
-				#{$label-selector}:nth-child(#{$i}) {
-					> label {
-						cursor: default;
-						color: $accent !important;
+    @for $i from 1 through $tab-count {
+      &:nth-of-type(#{$i}):checked {
+        #{$label-selector}:nth-child(#{$i}) {
+          border-color: $accent;
 
-						svg {
-							fill: $accent;
-						}
-					}
-				}
+          > label {
+            cursor: default;
+            color: $accent !important;
 
-				#{$slider-selector} {
-					transform: translateX(#{100% * ($i - 1)});
-				}
+            svg {
+              fill: $accent;
+            }
+          }
+        }
 
-				#{$content-selector}:nth-child(#{$i}) {
-					display: block;
-				}
-			}
-		}
-	}
+        #{$slider-selector} {
+          transform: translateX(#{100% * ($i - 1)});
+        }
 
-	@keyframes content {
-		from {
-			opacity: 0;
-			transform: translateY(5%);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0%);
-		}
-	}
+        #{$content-selector}:nth-child(#{$i}) {
+          display: block;
+        }
+      }
+    }
+  }
 
-	@media (max-width: map-get($breakpoints, small)) {
-		ul li label {
-			padding: 5px;
-			border-radius: 5px;
-
-			span {
-				display: none;
-			}
-		}
-
-		.slider {
-			display: none;
-		}
-	}
+  @keyframes content {
+    from {
+      opacity: 0;
+      transform: translateY(5%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
 }
+
+@media screen and (max-width: 450px) {
+  .tabs {
+    ul {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    ul li.main-tab {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $light-stale;
+    }
+
+    .slider {
+      display: none;
+    }
+  }
+}
+

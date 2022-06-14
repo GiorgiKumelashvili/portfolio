@@ -16,653 +16,662 @@ https://fonts.google.com/specimen/Quicksand     (font-family: 'Quicksand', sans-
 @import './other/tabs.scss';
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
 
-	&:not(span) {
-		color: white;
-	}
+  &:not(span) {
+    color: white;
+  }
 }
 
 body {
-	background-color: $secondary;
+  background-color: $secondary;
 
-	// scrollbar
+  // scrollbar
 
-	&::-webkit-scrollbar {
-		width: 12px;
-	}
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background-color: transparentize($color: $light-stale, $amount: 0.5);
-		border: 3px solid $secondary;
-		border-radius: 10px;
-		transition: all 300ms;
+  &::-webkit-scrollbar-thumb {
+    background-color: transparentize($color: $light-stale, $amount: 0.5);
+    border: 3px solid $secondary;
+    border-radius: 10px;
+    transition: all 300ms;
 
-		&:hover {
-			background-color: $light-stale;
-			transition: all 300ms;
-		}
-	}
+    &:hover {
+      background-color: $light-stale;
+      transition: all 300ms;
+    }
+  }
 
-	&::-webkit-scrollbar-track {
-		background: $secondary;
-	}
+  &::-webkit-scrollbar-track {
+    background: $secondary;
+  }
 }
 
 .right {
-	@include small-svg(white);
-	position: fixed;
-	top: 50%;
-	right: $container-padding;
-	background-color: $secondary-light;
-	box-shadow: 0 0 3px $primary;
-	border-radius: 50px;
-	padding: 10px 0;
+  @include small-svg(white);
+  position: fixed;
+  top: 50%;
+  right: $container-padding;
+  background-color: $secondary-light;
+  box-shadow: 0 0 3px $primary;
+  border-radius: 50px;
+  padding: 10px 0;
 
-	ul {
-		display: flex;
-		flex-direction: column;
-		list-style: none;
-	}
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
 
-	li {
-		padding: 10px;
-	}
+  li {
+    padding: 10px;
+  }
 }
 
 .left {
-	position: fixed;
-	bottom: 0;
-	left: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 
-	* {
-		transition: all 600ms;
-	}
+  * {
+    transition: all 600ms;
+  }
 
-	&:hover {
-		&::after {
-			background-color: $primary;
-		}
+  &:hover {
+    &::after {
+      background-color: $primary;
+    }
 
-		a {
-			color: $primary;
-		}
+    a {
+      color: $primary;
+    }
 
-		p {
-			transform: rotate(180deg) translateY(10px);
-		}
-	}
+    p {
+      transform: rotate(180deg) translateY(10px);
+    }
+  }
 
-	p {
-		writing-mode: vertical-lr;
-		transform: rotate(180deg);
-		margin-bottom: 20px;
-	}
+  p {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-bottom: 20px;
+  }
 
-	a {
-		color: $light-stale;
-		font-size: 14px;
-		text-decoration: none;
-		font-family: 'Red Hat Mono', monospace;
-	}
+  a {
+    color: $light-stale;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: 'Red Hat Mono', monospace;
+  }
 
-	margin-left: 20px;
+  margin-left: 20px;
 
-	&::after {
-		transition: all 600ms;
-		content: '';
-		display: block;
-		width: 1px;
-		height: 120px;
-		background-color: $lighter-stale;
-		margin-left: 10px;
-	}
+  &::after {
+    transition: all 600ms;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 120px;
+    background-color: $lighter-stale;
+    margin-left: 10px;
+  }
 }
 
 header {
-	position: fixed;
-	z-index: 10;
-	width: 100%;
-	user-select: none;
-	padding: 20px $container-padding;
-	transition: all 600ms;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  user-select: none;
+  padding: 20px $container-padding;
+  transition: all 600ms;
 
-	nav {
-		display: flex;
-		justify-content: space-between;
-	}
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
 
-	.nav-logo-container {
-		width: 50px;
-		height: 50px;
-	}
+  .nav-logo-container {
+    width: 50px;
+    height: 50px;
+  }
 
-	.nav-logo {
-		width: 100%;
-		height: 100%;
-	}
+  .nav-logo {
+    width: 100%;
+    height: 100%;
+  }
 
-	.nav-link-container {
-		display: flex;
-		align-items: center;
+  .nav-link-container {
+    display: flex;
+    align-items: center;
 
-		ul {
-			list-style: none;
-			display: flex;
-		}
+    ul {
+      list-style: none;
+      display: flex;
+    }
 
-		li {
-			padding: 10px 15px;
-			@include abs-center();
-			display: inline-block;
-			text-decoration: none;
-			position: relative;
-			transition: all 1000ms;
-			font-family: 'Red Hat Mono', monospace;
+    li {
+      padding: 10px 15px;
+      @include abs-center();
+      display: inline-block;
+      text-decoration: none;
+      position: relative;
+      transition: all 1000ms;
+      font-family: 'Red Hat Mono', monospace;
 
-			&:hover {
-				color: $primary;
-				transition: all 1000ms;
-			}
-		}
+      &:hover {
+        color: $primary;
+        transition: all 1000ms;
+      }
+    }
 
-		a.nav-resume {
-			border: 1px solid transparentize($color: $primary, $amount: 0.5);
-			color: $primary;
-			padding: 10px 15px;
-			border-radius: 5px;
-			margin-left: 10px;
-			height: 38px;
-			font-size: 0.9rem;
-			transition: all 300ms;
-			transition-delay: 200ms;
-			text-decoration: none;
-			@include abs-center();
+    a.nav-resume {
+      color: $primary;
+      border: 1.5px solid #64ffda;
+      border-radius: 3.5px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 10px 18px;
 
-			&:hover {
-				background-color: $primary;
-				transform: translateY(-4px);
-				transition: all 300ms;
-				color: black;
-				@include neon-shadow();
-			}
-		}
-	}
+      // border: 2px solid transparentize($color: $primary, $amount: 0.5);
+      // border-radius: 5px;
+      // height: 38px;
+
+      margin-left: 10px;
+      transition: all 300ms;
+      transition-delay: 200ms;
+      text-decoration: none;
+      @include abs-center();
+
+      &:hover {
+        background-color: $primary;
+        transform: translateY(-4px);
+        transition: all 300ms;
+        color: black;
+        @include neon-shadow();
+      }
+    }
+  }
 }
 
 main {
-	padding: 0 $container-padding;
-	width: 100%;
+  padding: 0 $container-padding;
+  width: 100%;
 
-	section {
-		width: 100%;
-		height: 100vh;
-	}
+  section {
+    width: 100%;
+    height: 100vh;
+  }
 }
 
 section#first-section {
-	$local-max-width: 1000px;
+  $local-max-width: 1000px;
 
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 
-	.content {
-		max-width: $local-max-width;
-		padding-top: 200px;
-	}
+  .content {
+    max-width: $local-max-width;
+    padding-top: 200px;
+  }
 
-	.header {
-		margin-bottom: 10px;
-		color: $primary;
-		font-family: 'Red Hat Mono', monospace;
-		font-size: 22px;
-		font-weight: 500;
-	}
+  .header {
+    margin-bottom: 10px;
+    color: $primary;
+    font-family: 'Red Hat Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+  }
 
-	.header-name {
-		margin-bottom: 10px;
-	}
+  .header-name {
+    margin-bottom: 10px;
+  }
 
-	.header-description {
-		max-width: calc($local-max-width - 300px);
-	}
+  .header-description {
+    max-width: calc($local-max-width - 300px);
+  }
 }
 
 section#second-section {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 
-	.content {
-		max-width: 1200px;
-		max-height: 800px;
-		padding-top: 200px;
-		display: flex;
-	}
+  .content {
+    max-width: 1200px;
+    max-height: 800px;
+    padding-top: 200px;
+    display: flex;
+  }
 
-	.about-me-image-container {
-		position: relative;
-		height: auto;
-		flex: 2;
-		user-select: none;
+  .about-me-image-container {
+    position: relative;
+    height: auto;
+    flex: 2;
+    user-select: none;
 
-		&:hover {
-			.overlay {
-				transition: all 600ms;
-				opacity: 0;
-			}
-			.underlay {
-				transition: all 600ms;
-				transform: initial;
-			}
-		}
+    &:hover {
+      .overlay {
+        transition: all 600ms;
+        opacity: 0;
+      }
+      .underlay {
+        transition: all 600ms;
+        transform: initial;
+      }
+    }
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			border-radius: 5px;
-		}
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
 
-		.overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-color: transparentize($color: $primary-dark, $amount: 0.6);
-			transition: all 600ms;
-		}
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: transparentize($color: $primary-dark, $amount: 0.6);
+      transition: all 600ms;
+    }
 
-		.underlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			transform: translateX(-20px) translateY(20px);
-			bottom: 0;
-			border: 3px solid transparentize($color: $primary-dark, $amount: 0.3);
-			z-index: -1;
-			transition: all 600ms;
-		}
-	}
+    .underlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: translateX(-20px) translateY(20px);
+      bottom: 0;
+      border: 3px solid transparentize($color: $primary-dark, $amount: 0.3);
+      z-index: -1;
+      transition: all 600ms;
+    }
+  }
 
-	.about-me-container {
-		padding: 0px 50px;
-		flex: 3;
+  .about-me-container {
+    padding: 0px 50px;
+    flex: 3;
 
-		// @override
-		.text-header {
-			margin: 0;
-			margin-block-start: 0;
-			font-size: 50px;
-		}
+    // @override
+    .text-header {
+      margin: 0;
+      margin-block-start: 0;
+      font-size: 50px;
+    }
 
-		.tabs {
-			margin-top: 40px;
-		}
-	}
+    .tabs {
+      margin-top: 40px;
+    }
+  }
 
-	@mixin local-mixin($color, $symbol: '▹') {
-		&::before {
-			content: $symbol;
-			position: absolute;
-			left: 0;
-			bottom: 10px;
-			color: $color;
-			font-size: 25px;
-			line-height: 12px;
+  @mixin local-mixin($color, $symbol: '▹') {
+    &::before {
+      content: $symbol;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      color: $color;
+      font-size: 25px;
+      line-height: 12px;
 
-			display: flex;
-			align-items: center;
-		}
-	}
+      display: flex;
+      align-items: center;
+    }
+  }
 
-	$local-knows: $primary;
-	$local-amateur: rgb(204, 204, 0);
-	$local-learning: rgb(208, 53, 255);
+  $local-knows: $primary;
+  $local-amateur: rgb(204, 204, 0);
+  $local-learning: rgb(208, 53, 255);
 
-	// inside tabs
-	.about-me-skills-list {
-		display: grid;
-		column-gap: 20px;
-		row-gap: 10px;
-		grid-template-columns: 1fr 1fr 1fr;
+  // inside tabs
+  .about-me-skills-list {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
 
-		li {
-			width: 100%;
-			position: relative;
+    li {
+      width: 100%;
+      position: relative;
 
-			text-align: start;
-			padding-left: 30px;
-			display: flex;
-			align-items: center;
-			font-size: 20px;
-			@include local-mixin($local-knows);
-		}
+      text-align: start;
+      padding-left: 30px;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      @include local-mixin($local-knows);
+    }
 
-		.no-arrow {
-			&::before {
-				content: none;
-				display: none;
-			}
-		}
+    .no-arrow {
+      &::before {
+        content: none;
+        display: none;
+      }
+    }
 
-		.learning-amateur {
-			@include local-mixin($local-amateur);
-		}
+    .learning-amateur {
+      @include local-mixin($local-amateur);
+    }
 
-		.learning-process {
-			@include local-mixin($local-learning);
-		}
-	}
+    .learning-process {
+      @include local-mixin($local-learning);
+    }
+  }
 
-	.about-me-skills-list-header {
-		font-size: 30px;
-		color: $light-stale;
-		margin: 20px 0;
-	}
+  .about-me-skills-list-header {
+    font-size: 30px;
+    color: $light-stale;
+    margin: 20px 0;
+  }
 
-	.main-skill-section {
-		position: relative;
-	}
+  .main-skill-section {
+    position: relative;
+  }
 
-	.color-explanation-container {
-		position: absolute;
-		right: -100px;
-		top: 40px;
+  .color-explanation-container {
+    position: absolute;
+    right: -100px;
+    top: 40px;
 
-		ul {
-			display: flex;
-			flex-direction: column;
-		}
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
 
-		li {
-			color: $primary;
-			width: 100%;
-			position: relative;
-			text-align: start;
-			padding-left: 30px;
-			display: flex;
-			align-items: center;
-			font-size: 20px;
-			@include local-mixin($local-knows, 'o');
-		}
+    li {
+      color: $primary;
+      width: 100%;
+      position: relative;
+      text-align: start;
+      padding-left: 30px;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      @include local-mixin($local-knows, 'o');
+    }
 
-		.learning-amateur {
-			@include local-mixin($local-amateur, 'o');
-		}
+    .learning-amateur {
+      @include local-mixin($local-amateur, 'o');
+    }
 
-		.learning-process {
-			@include local-mixin($local-learning, 'o');
-		}
-	}
+    .learning-process {
+      @include local-mixin($local-learning, 'o');
+    }
+  }
 
-	//@at-root
+  //@at-root
 
-	.jobs-section {
-		.job-container {
-			margin-top: 30px;
-		}
+  .jobs-section {
+    .job-container {
+      margin-top: 30px;
+    }
 
-		.title {
-			margin-bottom: 3px;
-		}
+    .title {
+      margin-bottom: 3px;
+    }
 
-		.subtitle {
-			margin-bottom: 3px;
-		}
+    .subtitle {
+      margin-bottom: 3px;
+    }
 
-		.date {
-			margin-left: 10px;
-		}
+    .date {
+      margin-left: 10px;
+    }
 
-		.jobs-descr-container {
-			margin-top: 10px;
-		}
+    .jobs-descr-container {
+      margin-top: 10px;
+    }
 
-		.job-descr {
-			margin-top: 5px;
-		}
+    .job-descr {
+      margin-top: 5px;
+    }
 
-		.details-text {
-			cursor: pointer;
-			margin-top: 20px;
-			text-align: end;
-			color: $light-stale;
-			transition: all 600ms;
+    .details-text {
+      cursor: pointer;
+      margin-top: 20px;
+      text-align: end;
+      color: $light-stale;
+      transition: all 600ms;
 
-			&:hover {
-				transition: all 600ms;
-				color: $primary;
-			}
-		}
-	}
+      &:hover {
+        transition: all 600ms;
+        color: $primary;
+      }
+    }
+  }
 
-	.award-section {
-		.title {
-			margin-bottom: 3px;
-		}
+  .award-section {
+    .title {
+      margin-bottom: 3px;
+    }
 
-		.subtitle {
-			margin-bottom: 3px;
-		}
+    .subtitle {
+      margin-bottom: 3px;
+    }
 
-		a {
-			@include small-svg($primary, $primary, 400, 20px, 20px);
-			cursor: pointer;
-			display: inline-block;
-			text-decoration: none;
-			text-align: end;
+    a {
+      @include small-svg($primary, $primary, 400, 20px, 20px);
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      text-align: end;
 
-			span {
-				display: flex;
-				align-items: center;
-			}
+      span {
+        display: flex;
+        align-items: center;
+      }
 
-			svg {
-				margin-left: 5px;
-			}
-		}
-	}
+      svg {
+        margin-left: 5px;
+      }
+    }
+  }
 }
 
 section#third-section {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 
-	.content {
-		padding-top: 200px;
-	}
+  .content {
+    padding-top: 200px;
+  }
 
-	.text-header {
-		// override font size
-		font-size: 50px;
-		text-align: center;
-	}
+  .text-header {
+    // override font size
+    font-size: 50px;
+    text-align: center;
+  }
 
-	.sub-header a {
-		cursor: pointer;
-		text-decoration: none;
-		$local-dimmed-color: transparentize($primary, 0.4);
-		color: $local-dimmed-color;
-		font-family: 'Red Hat Mono', monospace;
-		font-size: 20px;
-		font-weight: 500;
-		transition: all 600ms;
-		margin-top: 10px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+  .sub-header a {
+    cursor: pointer;
+    text-decoration: none;
+    $local-dimmed-color: transparentize($primary, 0.4);
+    color: $local-dimmed-color;
+    font-family: 'Red Hat Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 600ms;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-		svg {
-			margin-left: 10px;
-			height: 25px;
-			width: 25px;
+    svg {
+      margin-left: 10px;
+      height: 25px;
+      width: 25px;
 
-			path {
-				transition: all 600ms;
-				color: $local-dimmed-color;
-			}
-		}
+      path {
+        transition: all 600ms;
+        color: $local-dimmed-color;
+      }
+    }
 
-		&:hover {
-			&,
-			svg path {
-				transition: all 600ms;
-				color: $primary;
-			}
-		}
-	}
+    &:hover {
+      &,
+      svg path {
+        transition: all 600ms;
+        color: $primary;
+      }
+    }
+  }
 
-	.projects-container {
-		margin-top: 50px;
-		display: grid;
-		grid-template-columns: auto auto auto;
-		gap: 15px;
-	}
+  .projects-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+  }
 
-	.card {
-		$transition-time: 400ms;
+  .card {
+    $transition-time: 400ms;
 
-		cursor: pointer;
-		background-color: $secondary-light;
-		border-radius: 8px;
-		width: 380px;
-		padding: 40px;
-		transition: all $transition-time;
+    cursor: pointer;
+    background-color: $secondary-light;
+    border-radius: 8px;
+    width: 380px;
+    padding: 40px;
+    transition: all $transition-time;
 
-		&:hover {
-			transition: all $transition-time;
-			transform: translateY(-10px);
+    &:hover {
+      transition: all $transition-time;
+      transform: translateY(-10px);
 
-			.content-container h2 {
-				transition: all $transition-time;
-				color: $primary;
-			}
-		}
+      .content-container h2 {
+        transition: all $transition-time;
+        color: $primary;
+      }
+    }
 
-		.header-container {
-			@include small-svg($light-stale);
+    .header-container {
+      @include small-svg($light-stale);
 
-			a {
-				text-decoration: none;
-			}
-		}
+      a {
+        text-decoration: none;
+      }
+    }
 
-		.content-container {
-			margin: 20px 0;
+    .content-container {
+      margin: 20px 0;
 
-			h2 {
-				transition: all $transition-time;
-				margin-bottom: 10px;
-			}
-		}
+      h2 {
+        transition: all $transition-time;
+        margin-bottom: 10px;
+      }
+    }
 
-		.footer-container {
-			ul {
-				display: flex;
-			}
+    .footer-container {
+      ul {
+        display: flex;
+      }
 
-			li {
-				list-style: none;
-				padding: 10px;
+      li {
+        list-style: none;
+        padding: 10px;
 
-				&:first-child {
-					padding-left: 0;
-				}
-			}
-		}
-	}
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
 }
 
 section#fourth-section {
-	display: flex;
-	justify-content: center;
-	height: 80vh;
+  display: flex;
+  justify-content: center;
+  height: 80vh;
 
-	.content {
-		padding-top: 16%;
-	}
+  .content {
+    padding-top: 16%;
+  }
 
-	.text-header {
-		// override font size
-		// font-size: 50px;
-		text-align: center;
-		margin-bottom: 40px;
-	}
+  .text-header {
+    // override font size
+    // font-size: 50px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
 
-	.text-sub-header {
-		// override
-		max-width: 800px;
-		text-align: center;
-	}
+  .text-sub-header {
+    // override
+    max-width: 800px;
+    text-align: center;
+  }
 
-	.sub-header a {
-		$local-dimmed-color: transparentize($primary, 0.4);
+  .sub-header a {
+    $local-dimmed-color: transparentize($primary, 0.4);
 
-		cursor: pointer;
-		text-decoration: none;
-		color: $local-dimmed-color;
-		font-family: 'Red Hat Mono', monospace;
-		font-size: 20px;
-		font-weight: 500;
-		transition: all 600ms;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: $local-dimmed-color;
+    font-family: 'Red Hat Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 600ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-		border: 1px solid $local-dimmed-color;
-		width: fit-content;
-		padding: 13px 25px;
-		border-radius: 4px;
-		margin: 70px auto;
+    border: 1px solid $local-dimmed-color;
+    width: fit-content;
+    padding: 13px 25px;
+    border-radius: 4px;
+    margin: 70px auto;
 
-		&:hover {
-			transition: all 600ms;
-			color: $primary;
-			border: 1px solid $primary;
-			background-color: transparentize($primary, 0.95);
-		}
-	}
+    &:hover {
+      transition: all 600ms;
+      color: $primary;
+      border: 1px solid $primary;
+      background-color: transparentize($primary, 0.95);
+    }
+  }
 }
 
 footer {
-	$local-animation-time: 400ms;
-	@include small-svg(transparentize($light-stale, 0.25), $primary, $local-animation-time);
+  $local-animation-time: 400ms;
+  @include small-svg(transparentize($light-stale, 0.25), $primary, $local-animation-time);
 
-	p {
-		cursor: pointer;
-		margin-bottom: 15px;
+  p {
+    cursor: pointer;
+    margin-bottom: 15px;
 
-		&:hover {
-			svg path,
-			a {
-				color: $primary;
-				transition: all $local-animation-time;
-			}
-		}
-	}
+    &:hover {
+      svg path,
+      a {
+        color: $primary;
+        transition: all $local-animation-time;
+      }
+    }
+  }
 
-	a {
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-	svg {
-		margin-left: 10px;
-	}
+  svg {
+    margin-left: 10px;
+  }
 }
 
 .scroll {
-	transition: all 600ms;
-	opacity: 0;
+  transition: all 600ms;
+  opacity: 0;
 }
 
 .scroll-background {
-	background-color: black;
+  background-color: black;
 }
+
+// responsivness
+@import './responsivnes.scss';
+
