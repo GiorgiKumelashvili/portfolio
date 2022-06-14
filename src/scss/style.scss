@@ -623,13 +623,25 @@ section#fourth-section {
     width: fit-content;
     padding: 13px 25px;
     border-radius: 4px;
-    margin: 70px auto;
+    margin: 60px auto 0 auto;
 
     &:hover {
       transition: all 600ms;
       color: $primary;
       border: 1px solid $primary;
       background-color: transparentize($primary, 0.95);
+    }
+  }
+
+  .sub-header-container {
+    display: none;
+
+    @include small-svg($primary);
+    justify-content: center;
+    gap: 20px;
+
+    a {
+      margin-top: 20px;
     }
   }
 }
