@@ -539,6 +539,10 @@ section#third-section {
     padding: 40px;
     transition: all $transition-time;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // all footer must be at the same line
+
     &:hover {
       transition: all $transition-time;
       transform: translateY(-10px);
