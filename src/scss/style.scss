@@ -562,7 +562,10 @@ section#third-section {
     }
 
     .content-container {
+      display: flex;
+      flex-direction: column;
       margin: 20px 0;
+      flex: 1;
 
       h2 {
         transition: all $transition-time;
@@ -690,4 +693,3 @@ footer {
 
 // responsivness
 @import './responsivnes.scss';
-

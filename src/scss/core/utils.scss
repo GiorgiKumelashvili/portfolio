@@ -2,23 +2,33 @@
 @import './mixins.scss';
 
 .color-primary {
-	color: $primary;
+  color: $primary;
 }
 
 .color-primary-dimmed {
-	color: transparentize($color: rgb(204, 204, 0), $amount: 0.2);
+  color: transparentize($color: rgb(204, 204, 0), $amount: 0.2);
 }
 
 .text-header {
-	font-size: 80px;
-	font-weight: 600;
-	color: $light-stale;
+  font-size: 80px;
+  font-weight: 600;
+  color: $light-stale;
 }
 
 .text-sub-header {
-	@include text-secondary();
+  @include text-secondary();
 }
 
 .mt-0 {
-	margin-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.text-muted {
+  @include text-secondary();
+
+  color: transparentize($color: $light-stale, $amount: 0.25);
+}
+
+.bold {
+  font-weight: 600;
 }

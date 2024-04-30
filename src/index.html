@@ -1,23 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="./scss/style.scss" />
-    <link rel="shortcut icon" href="/src/assets/favicon_io/favicon-32x32.png" />
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="./assets/favicon_io/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/favicon_io/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="./assets/favicon_io/android-chrome-512x512.png"
+    />
+    <link rel="apple-touch-icon" href="./assets/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png" />
   </head>
   <body>
     <!-- Left bottom social links -->
     <div class="right">
       <ul>
         <li>
-          <a
-            href="https://github.com/GiorgiKumelashvili?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://github.com/GiorgiKumelashvili" target="_blank" rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -57,23 +71,6 @@
               ></path>
               <rect x="2" y="9" width="4" height="12"></rect>
               <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/Giorgi21.10/" target="_blank" rel="noopener noreferrer">
-            <svg
-              viewBox="0 0 50 50"
-              role="img"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 26.580078 10 C 23.92822 10 21.917076 10.867217 20.677734 12.400391 C 19.438393 13.933564 19 15.981046 19 18.226562 L 19 20 L 17 20 A 1.0001 1.0001 0 0 0 16 21 L 16 26 A 1.0001 1.0001 0 0 0 17 27 L 19 27 L 19 39 A 1.0001 1.0001 0 0 0 20 40 L 26 40 A 1.0001 1.0001 0 0 0 27 39 L 27 27 L 31 27 A 1.0001 1.0001 0 0 0 31.980469 26.195312 L 32.980469 21.195312 A 1.0001 1.0001 0 0 0 32 20 L 27 20 L 27 17.806641 C 27 17.321617 27.03137 17.325614 27.171875 17.234375 C 27.312385 17.143136 27.820197 17 28.710938 17 L 32 17 A 1.0001 1.0001 0 0 0 33 16 L 33 12 A 1.0001 1.0001 0 0 0 32.335938 11.058594 C 32.335938 11.058594 29.456337 10 26.580078 10 z M 26.580078 12 C 28.472499 12 30.227501 12.510447 31 12.751953 L 31 15 L 28.710938 15 C 27.663677 15 26.813974 15.08458 26.083984 15.558594 C 25.353995 16.032605 25 16.940664 25 17.806641 L 25 21 A 1.0001 1.0001 0 0 0 26 22 L 30.779297 22 L 30.179688 25 L 26 25 A 1.0001 1.0001 0 0 0 25 26 L 25 38 L 21 38 L 21 26 A 1.0001 1.0001 0 0 0 20 25 L 18 25 L 18 22 L 20 22 A 1.0001 1.0001 0 0 0 21 21 L 21 18.226562 C 21 16.24708 21.405014 14.681779 22.232422 13.658203 C 23.05983 12.634627 24.336936 12 26.580078 12 z"
-              />
             </svg>
           </a>
         </li>
@@ -175,7 +172,7 @@
             I'm a software developer specializing in building
             <span class="color-primary">backend servers</span> and
             <span class="color-primary">Api</span>
-            (occasionally frontend using React or Angular).
+            (occasionally frontend using React, Next, Solid).
             <br />
             I'm focused on clean code, using solid principles, and,
             <br />
@@ -300,48 +297,105 @@
                   <p class="about-me-skills-list-header mt-0">Languages</p>
 
                   <ul class="about-me-skills-list">
-                    <li>JavaScript</li>
-                    <li>TypeScript</li>
-                    <li>Php</li>
+                    <li>JS/TS</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
                     <li>SQL</li>
+                    <li>Dart</li>
+                    <li>Bash</li>
+                    <li class="learning-amateur">C#</li>
+                    <li class="learning-amateur">Java</li>
+                    <li class="learning-amateur">Python</li>
+                    <li class="learning-process">Rust</li>
+                    <li class="learning-process">Elixir</li>
                   </ul>
 
-                  <p class="about-me-skills-list-header">Frameworks</p>
+                  <p class="about-me-skills-list-header">Frameworks & Runtimes</p>
+
+                  <p style="margin-bottom: 10px" class="text-muted">Front</p>
+                  <ul class="about-me-skills-list">
+                    <li>React</li>
+                    <li>Next</li>
+                    <li>Solid</li>
+                    <li>Vue</li>
+                    <li>Flutter</li>
+                  </ul>
+                  <br />
+
+                  <p style="margin-bottom: 10px" class="text-muted">Server</p>
+                  <ul class="about-me-skills-list">
+                    <li>Express</li>
+                    <li>Nest</li>
+                    <li>Kafka</li>
+                    <li>Elastic</li>
+                    <li class="learning-process">Docker</li>
+                  </ul>
+
+                  <p class="about-me-skills-list-header">Databases</p>
 
                   <ul class="about-me-skills-list">
-                    <li>Node</li>
-                    <li>React</li>
-                    <li>PostgresSql</li>
-
-                    <li>Express</li>
-                    <li>Angular</li>
+                    <li>Postgresql</li>
                     <li>Mysql</li>
 
-                    <li>Nest</li>
-                    <li>Vue</li>
-                    <li>Laravel</li>
+                    <li>Mongodb</li>
+                    <li>Redis</li>
+                  </ul>
+
+                  <p class="about-me-skills-list-header">Cloud (e.g. aws)</p>
+
+                  <ul class="about-me-skills-list">
+                    <li>EC2</li>
+                    <li>Cloudwatch</li>
+                    <li>Gateway</li>
+                    <li>Lambda</li>
+                    <li>S3</li>
+                    <li>IAM</li>
                   </ul>
 
                   <p class="about-me-skills-list-header">Other</p>
 
                   <ul class="about-me-skills-list">
-                    <li class="">Shell</li>
+                    <li>Jest</li>
+                    <li>Testcontainer</li>
+                    <li>k9s</li>
+                    <li>Linux</li>
+                    <li>Prisma</li>
+                    <li>Tauri</li>
+                    <li>Shell</li>
+                    <li>Git</li>
                     <li class="learning-amateur">Nginx</li>
-                    <li class="learning-process">C#</li>
 
-                    <li class="">Git</li>
+                    <!-- <li class="no-arrow"></li>
                     <li class="no-arrow"></li>
-                    <li class="learning-process">Flutter, Dart</li>
-
-                    <li class="no-arrow"></li>
-                    <li class="no-arrow"></li>
-                    <li class="learning-process">Data st. & Alg.</li>
+                    <li class="no-arrow"></li> -->
                   </ul>
                 </section>
 
                 <section class="jobs-section">
                   <div class="job-container mt-0">
-                    <h1 class="title">Fullstack Developer (Node/React/Mysql/AWS)</h1>
+                    <h1 class="title">
+                      Senior Backend Engineer (Node/Nest/Postgresql/AWS/Kafka/Elastic)
+                    </h1>
+                    <p class="subtitle">
+                      Syniotec
+                      <span class="date color-primary"> (07/2022 - 03/2024) </span>
+                    </p>
+
+                    <div class="jobs-descr-container">
+                      <p class="job-descr text-sub-header">
+                        - Created, maintained and updated features of their backend services,
+                        company used microservice architecture, utilizing kafka, elasticsearch,
+                        kubernetes and AWS service (Like Ec2, S3, RDS, IAM, Cloudwatch, API Gateway,
+                        etc). Created multiple feature like dynamic form builder, pdf/excel
+                        generation on big data. Created notification service, worked on multiple big
+                        data sets that included transportation, equipment, organization and some
+                        other services. Collaborated with mobile team as well.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="job-container">
+                    <h1 class="title">Fullstack Developer (Node/Nest/React/Mysql/AWS)</h1>
                     <p class="subtitle">
                       Citycom
                       <span class="date color-primary"> (04/2022 - 06/2022) </span>
@@ -414,7 +468,7 @@
                     organised by
 
                     <a
-                      href="https://www.startuperi.ge/"
+                      href="https://www.tbcbusiness.ge/en/business-support/blogs/Appschallenge-winners"
                       target="_blank"
                       referrerpolicy="no-referrer"
                       class="color-primary"
@@ -463,7 +517,7 @@
       </section>
 
       <!-- Third section, projects -->
-      <section id="third-section">
+      <section id="third-section" style="margin-top: 350px">
         <div class="content">
           <h1 class="text-header">Personal Projects</h1>
 
@@ -493,11 +547,11 @@
           </p>
 
           <div class="projects-container">
-            <!-- Movo -->
+            <!-- Beastz Vault -->
             <div class="card">
               <div class="header-container">
                 <a
-                  href="https://github.com/GreenFoxSociety/movo"
+                  href="https://github.com/beastzdotdev/beastz-vault"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -511,14 +565,13 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <title>GitHub</title>
                     <path
                       d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
                     ></path>
                   </svg>
                 </a>
 
-                <a href="https://movo.greenfox.site" target="_blank" rel="noopener noreferrer">
+                <a href="https://vault.beastz.dev" target="_blank" rel="noopener noreferrer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     role="img"
@@ -530,7 +583,6 @@
                     stroke-linejoin="round"
                     class="feather feather-external-link"
                   >
-                    <title>External Link</title>
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                     <polyline points="15 3 21 3 21 9"></polyline>
                     <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -538,19 +590,92 @@
                 </a>
               </div>
               <div class="content-container">
-                <h2>Movo</h2>
+                <h2>Beastz Vault</h2>
                 <p class="text-sub-header">
-                  Cool desktop application made with electron, which lets you watch any movie,
-                  series, anime etc. application is very comfortable and additional features are
-                  already in motion (e.g. profile, favourites, settings, analytics ...)
+                  The secure file storage, go to solution inspired by the user-friendliness of
+                  Google Drive, enhanced with robust features like encryption and public file
+                  sharing
+                  <br />
+                  <br />
                 </p>
+
+                <div style="margin-top: auto">
+                  -
+                  <a href="https://github.com/beastzdotdev/beastz-api">Server API</a>
+                </div>
               </div>
               <div class="footer-container">
                 <ul>
-                  <li>Angular</li>
-                  <li>Electron</li>
-                  <li>Node.js</li>
-                  <li>Nest.js</li>
+                  <li>React</li>
+                  <li>TS</li>
+                  <li>Blueprint</li>
+                  <li>Zod</li>
+                  <li>Formik</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Beastz Doc -->
+            <div class="card">
+              <div class="header-container">
+                <a
+                  href="https://github.com/beastzdotdev/beastz-doc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path>
+                  </svg>
+                </a>
+
+                <a href="https://doc.beastz.dev" target="_blank" rel="noopener noreferrer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-external-link"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+              <div class="content-container">
+                <h2>Beastz Doc</h2>
+                <p class="text-sub-header">
+                  Minimalist collaborative editing tool, built with react and powered by socket.io
+                  <br />
+                  <br />
+                </p>
+
+                <div style="margin-top: auto">
+                  -
+                  <a href="https://github.com/beastzdotdev/beastz-doc-api">Server API</a>
+                </div>
+              </div>
+              <div class="footer-container">
+                <ul>
+                  <li>React</li>
+                  <li>TS</li>
+                  <li>Blueprint</li>
+                  <li>Socket.io</li>
                 </ul>
               </div>
             </div>
@@ -595,110 +720,6 @@
                   <li>Javafx</li>
                   <li>Jdbc</li>
                   <li>Sqlite</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Car ecommerce project -->
-            <div class="card">
-              <div class="header-container">
-                <a
-                  href="https://github.com/GiorgiKumelashvili/car-ecommerce"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <title>GitHub</title>
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    ></path>
-                  </svg>
-                </a>
-
-                <a href="https://carrrbase.herokuapp.com" target="_blank" rel="noopener noreferrer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-external-link"
-                  >
-                    <title>External Link</title>
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg>
-                </a>
-              </div>
-
-              <div class="content-container">
-                <h2>Car Ecommerce</h2>
-                <p class="text-sub-header">
-                  Car ecommerce website about cars, built with php engine, site include multiple
-                  features including filtering,auth, profile, custom car upload and more
-                </p>
-              </div>
-              <div class="footer-container">
-                <ul>
-                  <li>Laravel</li>
-                  <li>Mysql</li>
-                  <li>Blade</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Chatter -->
-            <div class="card">
-              <div class="header-container">
-                <a
-                  href="https://github.com/GreenFoxSociety/chatter"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <title>GitHub</title>
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
-              <div class="content-container">
-                <h2>Chatter (Coming Soon)</h2>
-                <p class="text-sub-header">
-                  Cool looking discord like chatting web application, where you can be in chat with
-                  individual or group of people, website also includes custom emoji upload and
-                  customizing user interface
-                </p>
-              </div>
-              <div class="footer-container">
-                <ul>
-                  <li>Angular</li>
-                  <li>Socket.io</li>
-                  <li>Nest.js</li>
-                  <li>PostgresSql</li>
                 </ul>
               </div>
             </div>
@@ -812,4 +833,3 @@
     <script src="./ts/app.ts"></script>
   </body>
 </html>
-
