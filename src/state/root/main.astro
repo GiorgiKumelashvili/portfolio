@@ -9,6 +9,9 @@ import ExternalLinkLogo from './icons/external-link.svg?raw';
 import LinkedinLogo from './icons/linkedin.svg?raw';
 import GithubLogo from './icons/github.svg?raw';
 import FacebookLogo from './icons/facebook.svg?raw';
+
+import MainImg from '../../assets/badass.webp';
+import { Image } from 'astro:assets';
 ---
 
 <main>
@@ -32,9 +35,10 @@ import FacebookLogo from './icons/facebook.svg?raw';
       <div class="header-giff-link">
         <iframe
           src={consts.HEADER_GIFF_LINK}
+          loading="lazy"
           width="100%"
           height="100%"
-          style="position: absolute; border: none"
+          style="position: absolute; border: none;"
           class="giphy-embed"
           allowfullscreen></iframe>
       </div>
@@ -45,7 +49,7 @@ import FacebookLogo from './icons/facebook.svg?raw';
   <section id="second-section">
     <div class="content">
       <div class="about-me-image-container">
-        <img src={consts.MAIN_IMG} alt="portfolio main image" />
+        <Image src={MainImg} format="webp" alt="portfolio main image" />
         <div class="overlay"></div>
         <div class="underlay"></div>
       </div>

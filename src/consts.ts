@@ -9,7 +9,5 @@ export const consts = {
   LINKEDIN_LINK: 'https://www.linkedin.com/in/giorgi-kumelashvili-5869a2210/',
   TBC_LINK: 'https://www.tbcbusiness.ge/en/business-support/blogs/Appschallenge-winners',
   MAIL: 'giorgi.kumelashvili21@gmail.com',
-
-  MAIN_IMG: '/assets/badass.png',
   CV: '/assets/giorgi_kumelashvili.pdf',
 };

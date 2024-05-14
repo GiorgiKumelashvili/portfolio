@@ -27,12 +27,16 @@ https://fonts.google.com/specimen/Quicksand     (font-family: 'Quicksand', sans-
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: fit-content;
   background-color: $secondary;
 
   // scrollbar
 
   &::-webkit-scrollbar {
-    width: 12px;
+    width: thin;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -259,8 +263,9 @@ section#second-section {
         opacity: 0;
       }
       .underlay {
-        transition: all 600ms;
+        transition: all 600ms 200ms;
         transform: initial;
+        border-color: transparent;
       }
     }
 
@@ -272,6 +277,7 @@ section#second-section {
     }
 
     .overlay {
+      border-radius: 5px;
       position: absolute;
       top: 0;
       left: 0;
@@ -282,6 +288,7 @@ section#second-section {
     }
 
     .underlay {
+      border-radius: 5px;
       position: absolute;
       top: 0;
       left: 0;
@@ -491,8 +498,7 @@ section#third-section {
   .sub-header a {
     cursor: pointer;
     text-decoration: none;
-    $local-dimmed-color: transparentize($primary, 0.4);
-    color: $local-dimmed-color;
+    color: $primary;
     font-family: 'Red Hat Mono', monospace;
     font-size: 20px;
     font-weight: 500;
@@ -509,7 +515,7 @@ section#third-section {
 
       path {
         transition: all 600ms;
-        color: $local-dimmed-color;
+        color: $primary;
       }
     }
 
@@ -517,7 +523,7 @@ section#third-section {
       &,
       svg path {
         transition: all 600ms;
-        color: $primary;
+        color: transparentize($primary, 0.4);
       }
     }
   }
