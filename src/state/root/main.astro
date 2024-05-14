@@ -1,0 +1,296 @@
+---
+import { consts } from '../../consts';
+import { content } from './content';
+import SkillsLogo from './icons/skills.svg?raw';
+import ExperienceLogo from './icons/experience.svg?raw';
+import AwardsLogo from './icons/awards.svg?raw';
+import MiscLogo from './icons/misc.svg?raw';
+import ExternalLinkLogo from './icons/external-link.svg?raw';
+import LinkedinLogo from './icons/linkedin.svg?raw';
+import GithubLogo from './icons/github.svg?raw';
+import FacebookLogo from './icons/facebook.svg?raw';
+---
+
+<main>
+  <!-- first section -->
+  <section id="first-section">
+    <div class="content">
+      <p class="header">Hello, my name is</p>
+      <h1 class="header-name text-header">Giorgi Kumelashvili.</h1>
+      <p class="header-description text-sub-header">
+        I'm a software developer specializing in building
+        <span class="color-primary">backend servers</span> and
+        <span class="color-primary">Api</span>
+        (occasionally frontend using React, Next, Solid).
+        <br />
+        I'm focused on clean code, using solid principles, and,
+        <br />
+        most importantly, having fun
+        <span class="color-primary">:)</span>
+      </p>
+
+      <div class="header-giff-link">
+        <iframe
+          src={consts.HEADER_GIFF_LINK}
+          width="100%"
+          height="100%"
+          style="position: absolute; border: none"
+          class="giphy-embed"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Second section, about me -->
+  <section id="second-section">
+    <div class="content">
+      <div class="about-me-image-container">
+        <img src={consts.MAIN_IMG} alt="portfolio main image" />
+        <div class="overlay"></div>
+        <div class="underlay"></div>
+      </div>
+
+      <div class="about-me-container">
+        <h1 class="text-header">About Me</h1>
+
+        <p class="text-sub-header">
+          {content.aboutMe.firstPart}
+          <br />
+          <span class="color-primary-dimmed">
+            {content.aboutMe.secondPart}
+          </span>
+        </p>
+
+        <!-- tabs -->
+        <div class="tabs">
+          <input type="radio" id="tab1" name="tab-control" checked />
+          <input type="radio" id="tab2" name="tab-control" />
+          <input type="radio" id="tab3" name="tab-control" />
+          <input type="radio" id="tab4" name="tab-control" />
+
+          <ul>
+            <li class="main-tab">
+              <label for="tab1" role="button">
+                <Fragment set:html={SkillsLogo} />
+                <br />
+                <span>Main Skills</span>
+              </label>
+            </li>
+            <li class="main-tab">
+              <label for="tab2" role="button">
+                <Fragment set:html={ExperienceLogo} />
+                <br />
+                <span>Experience</span>
+              </label>
+            </li>
+            <li class="main-tab">
+              <label for="tab3" role="button">
+                <Fragment set:html={AwardsLogo} />
+                <br />
+                <span>Awards</span>
+              </label>
+            </li>
+            <li class="main-tab">
+              <label for="tab4" role="button">
+                <Fragment set:html={MiscLogo} />
+                <br />
+                <span>Misc</span>
+              </label>
+            </li>
+          </ul>
+
+          <div class="slider">
+            <div class="indicator"></div>
+          </div>
+
+          <div class="tab-content">
+            <section class="main-skill-section">
+              <div class="color-explanation-container">
+                <ul>
+                  <li>Know well</li>
+                  <li class="learning-amateur">Amateur</li>
+                  <li class="learning-process">Still learning</li>
+                </ul>
+              </div>
+
+              {
+                content.skills.map(e => (
+                  <>
+                    <p class="about-me-skills-list-header">{e.title}</p>
+
+                    <ul class="about-me-skills-list">
+                      {e.data.map(lang => {
+                        let skillClass = '';
+
+                        switch (lang.type) {
+                          case 'default':
+                            skillClass = '';
+                            break;
+                          case 'amateur':
+                            skillClass = 'learning-amateur';
+                            break;
+                          case 'learning':
+                            skillClass = 'learning-process';
+                            break;
+                        }
+
+                        return <li class={skillClass}>{lang.name}</li>;
+                      })}
+                    </ul>
+                  </>
+                ))
+              }
+            </section>
+
+            <section class="jobs-section">
+              {
+                content.experience.map(e => (
+                  <div class="job-container">
+                    <h1 class="title">{e.position}</h1>
+                    <p class="subtitle">
+                      {e.companyTitle}
+                      <span class="date color-primary"> ({e.dateRange}) </span>
+                    </p>
+
+                    <div class="jobs-descr-container">
+                      <p class="job-descr text-sub-header">{e.description}</p>
+                    </div>
+                  </div>
+                ))
+              }
+
+              <p class="details-text">
+                <a href={consts.CV}> More details in CV </a>
+              </p>
+            </section>
+
+            <section class="award-section">
+              <h1 class="title">TBC startups</h1>
+              <p class="subtitle">
+                II-nd place for presenting StrangeElo in competition for startups,
+                <br />
+                organised by
+
+                <a
+                  href={consts.TBC_LINK}
+                  target="_blank"
+                  referrerpolicy="no-referrer"
+                  class="color-primary"
+                >
+                  <span>
+                    TBC Bank
+
+                    <Fragment set:html={ExternalLinkLogo} />
+                  </span>
+                </a>
+              </p>
+            </section>
+
+            <section>
+              <p class="text-sub-header">
+                {content.misc}
+                <br />
+                <span class="color-primary"> - In general, I enjoy seeing code come to life. </span>
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Third section, projects -->
+  <section id="third-section" style="margin-top: 560px">
+    <div class="content">
+      <h1 class="text-header">Personal Projects</h1>
+
+      <p class="sub-header">
+        <a href={consts.GITHUB_REPO_LINK} target="_blank" rel="noopener noreferrer">
+          View archive
+          <Fragment set:html={GithubLogo} />
+        </a>
+      </p>
+
+      <div class="projects-container">
+        {
+          content.projects.map(e => (
+            <div class="card">
+              <div class="header-container">
+                <a href={e.githubLink} target="_blank" rel="noopener noreferrer">
+                  <Fragment set:html={GithubLogo} />
+                </a>
+
+                {e.link && (
+                  <a href={e.link} target="_blank" rel="noopener noreferrer">
+                    <Fragment set:html={ExternalLinkLogo} />
+                  </a>
+                )}
+              </div>
+              <div class="content-container">
+                <h2>{e.title}</h2>
+                <p class="text-sub-header">
+                  {e.description}
+                  <br />
+                  <br />
+                </p>
+
+                {e.serverApiLink && (
+                  <div style="margin-top: auto">
+                    -
+                    <a href={e.serverApiLink} target="_blank" rel="noopener noreferrer">
+                      Server API
+                    </a>
+                  </div>
+                )}
+              </div>
+              <div class="footer-container">
+                <ul>
+                  {e.tags.map(tag => (
+                    <li>{tag}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="fourth-section">
+    <div class="content">
+      <h1 class="text-header">Contact Me</h1>
+
+      <p class="text-sub-header">
+        Always open to new opportunities, my inbox is always open. Whether you have a question or
+        just want to say hi, I’ll try my best to get back to you!
+      </p>
+
+      <p class="sub-header">
+        <a href={`mailto: ${consts.MAIL}`} target="_blank" rel="noopener noreferrer">
+          {consts.MAIL}
+        </a>
+      </p>
+
+      <div class="sub-header-container">
+        <p class="sub-header">
+          <a href={consts.LINKEDIN_LINK} target="_blank" rel="noopener noreferrer">
+            <Fragment set:html={LinkedinLogo} />
+          </a>
+        </p>
+
+        <p class="sub-header">
+          <a href={consts.GITHUB_PROFILE_LINK} target="_blank" rel="noopener noreferrer">
+            <Fragment set:html={GithubLogo} />
+          </a>
+        </p>
+
+        <p class="sub-header">
+          <a href={consts.FACEBOOK_LINK} target="_blank" rel="noopener noreferrer">
+            <Fragment set:html={FacebookLogo} />
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>

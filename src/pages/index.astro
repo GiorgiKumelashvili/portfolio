@@ -1,0 +1,24 @@
+---
+import { consts } from '../consts';
+
+import BaseLayout from '../layout/base-layout.astro';
+import MobileSidebar from '../state/root/mobile-sidebar.astro';
+import Footer from '../state/root/footer.astro';
+import Right from '../state/root/right.astro';
+import Left from '../state/root/left.astro';
+import Navbar from '../state/root/navbar.astro';
+import Main from '../state/root/main.astro';
+---
+
+<BaseLayout title={consts.SITE_TITLE} description={consts.SITE_DESCRIPTION}>
+  <!-- Right bottom social links -->
+  <Right />
+
+  <!-- Left mail -->
+  <Left />
+
+  <Navbar />
+  <MobileSidebar />
+  <Main />
+  <Footer />
+</BaseLayout>

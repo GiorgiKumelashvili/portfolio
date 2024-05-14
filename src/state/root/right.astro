@@ -1,0 +1,26 @@
+---
+import { consts } from '../../consts';
+import GithubLogo from './icons/github.svg?raw';
+import LinkedinLogo from './icons/linkedin.svg?raw';
+import FacebookLogo from './icons/facebook.svg?raw';
+---
+
+<div class="right">
+  <ul>
+    <li>
+      <a href={consts.GITHUB_PROFILE_LINK} target="_blank" rel="noopener noreferrer">
+        <Fragment set:html={GithubLogo} />
+      </a>
+    </li>
+    <li>
+      <a href={consts.LINKEDIN_LINK} target="_blank" rel="noopener noreferrer">
+        <Fragment set:html={LinkedinLogo} />
+      </a>
+    </li>
+    <li>
+      <a href={consts.FACEBOOK_LINK} target="_blank" rel="noopener noreferrer">
+        <Fragment set:html={FacebookLogo} />
+      </a>
+    </li>
+  </ul>
+</div>

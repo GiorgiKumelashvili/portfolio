@@ -1,0 +1,48 @@
+---
+import { consts } from '../../consts';
+---
+
+<div class="nav-link-container-mobile-blur"></div>
+<div class="nav-link-container-mobile">
+  <div class="svg-container">
+    <svg viewBox="0 0 24 24" id="close-sidebar">
+      <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+      <path
+        d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+      ></path>
+    </svg>
+  </div>
+
+  <ul>
+    <li style="cursor: pointer" class="nav-second-section">
+      <span class="color-primary">#</span>About
+    </li>
+    <li style="cursor: pointer" class="nav-third-section">
+      <span class="color-primary">#</span>Projects
+    </li>
+    <li style="cursor: pointer" class="nav-fourth-section">
+      <span class="color-primary">#</span>Contact
+    </li>
+  </ul>
+
+  <a class="nav-resume" target="_blank" referrerpolicy="no-referrer" href={consts.CV}> Resume </a>
+</div>
+
+<script>
+  import { toggleSidebar } from './shared';
+
+  const burgerIcon = document.getElementById('open-sidebar');
+  const closeSidebarIcon = document.getElementById('close-sidebar');
+  const sidenavContainer = document.querySelector<HTMLElement>('.nav-link-container-mobile-blur');
+  const sidenavContent = document.querySelector<HTMLElement>('.nav-link-container-mobile');
+
+  burgerIcon?.addEventListener('click', () =>
+    toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: true })
+  );
+  closeSidebarIcon?.addEventListener('click', () =>
+    toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: false })
+  );
+  sidenavContainer?.addEventListener('click', () =>
+    toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: false })
+  );
+</script>

@@ -1,0 +1,91 @@
+---
+import { consts } from '../../consts';
+import BurgerLogo from './icons/burger.svg?raw';
+---
+
+<header id="header">
+  <nav>
+    <div class="nav-logo-container">
+      <a href="/">
+        <img class="nav-logo" src="/assets/green-fox.svg" alt="portfolio logo" />
+      </a>
+    </div>
+
+    <div class="nav-link-container">
+      <ul>
+        <li style="cursor: pointer" class="nav-second-section">
+          <span class="color-primary">#</span>About
+        </li>
+        <li style="cursor: pointer" class="nav-third-section">
+          <span class="color-primary">#</span>Projects
+        </li>
+        <li style="cursor: pointer" class="nav-fourth-section">
+          <span class="color-primary">#</span>Contact
+        </li>
+      </ul>
+
+      <a class="nav-resume" target="_blank" referrerpolicy="no-referrer" href={consts.CV}>
+        Resume
+      </a>
+    </div>
+
+    <div class="nav-burger-container">
+      <Fragment set:html={BurgerLogo} />
+    </div>
+  </nav>
+</header>
+
+<script>
+  import { toggleSidebar } from './shared';
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const sidenavContainer = document.querySelector<HTMLElement>('.nav-link-container-mobile-blur');
+    const sidenavContent = document.querySelector<HTMLElement>('.nav-link-container-mobile');
+
+    document.querySelectorAll('.nav-second-section').forEach(el => {
+      el?.addEventListener('click', () => {
+        document.getElementById('second-section')?.scrollIntoView({ behavior: 'smooth' });
+        toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: false });
+      });
+    });
+
+    document.querySelectorAll('.nav-third-section').forEach(el => {
+      el?.addEventListener('click', () => {
+        document.getElementById('third-section')?.scrollIntoView({ behavior: 'smooth' });
+        toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: false });
+      });
+    });
+
+    document.querySelectorAll('.nav-fourth-section').forEach(el => {
+      el?.addEventListener('click', () => {
+        document.getElementById('fourth-section')?.scrollIntoView({ behavior: 'smooth' });
+        toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: false });
+      });
+    });
+  });
+
+  const navbar = document.getElementById('header');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', () => {
+    let st = window.scrollY || document.documentElement.scrollTop;
+
+    if (navbar) {
+      if (st > lastScrollTop) {
+        // downscroll code
+        navbar.classList.add('scroll');
+      } else {
+        // upscroll code
+        navbar.classList.remove('scroll');
+      }
+
+      if (window.scrollY < 20) {
+        navbar.classList.remove('scroll-background');
+      } else {
+        navbar.classList.add('scroll-background');
+      }
+    }
+
+    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+  });
+</script>

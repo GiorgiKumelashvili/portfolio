@@ -1,0 +1,22 @@
+---
+import { consts } from '../../consts';
+import GithubLogo from './icons/github.svg?raw';
+---
+
+<footer>
+  <iframe
+    src={consts.FOOTER_GIFF_LINK}
+    style="width: 100%; margin: 0 auto 20px; pointer-events: none; border: none"
+    height="300px"
+    class="giphy-embed"
+    allowfullscreen
+  >
+  </iframe>
+
+  <p class="text-sub-header">
+    <a href={consts.GITHUB_PROFILE_LINK} target="_blank" rel="noopener noreferrer">
+      Designed & Built by Giorgi Kumelashvili
+      <Fragment set:html={GithubLogo} />
+    </a>
+  </p>
+</footer>

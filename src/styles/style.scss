@@ -367,7 +367,7 @@ section#second-section {
   .about-me-skills-list-header {
     font-size: 30px;
     color: $light-stale;
-    margin: 20px 0;
+    margin: 35px 0 15px 0;
   }
 
   .main-skill-section {
@@ -689,6 +689,15 @@ footer {
 
 .scroll-background {
   background-color: black;
+}
+
+.header-giff-link {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56%;
+  position: relative;
+  pointer-events: none;
+  margin-top: 50px;
 }
 
 // responsivness
