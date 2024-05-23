@@ -1,55 +1,60 @@
 @import './variables.scss';
 
 @mixin abs-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin neon-shadow($color: $primary) {
-	box-shadow: 0 0 20px 0 transparentize($color, $amount: 0.4);
+  box-shadow: 0 0 20px 0 transparentize($color, $amount: 0.4);
 }
 
 @mixin text-secondary {
-	color: transparentize($color: $light-stale, $amount: 0.25);
-	font-size: 19px;
-	line-height: 1.35;
+  color: transparentize($color: $light-stale, $amount: 0.25);
+  font-size: 19px;
+  line-height: 1.35;
 }
 
 @mixin small-svg(
-	$color: white,
-	$hover-color: $primary,
-	$transition-time: 400ms,
-	$width: 25px,
-	$height: 25px
+  $color: white,
+  $hover-color: $primary,
+  $transition-time: 400ms,
+  $width: 25px,
+  $height: 25px,
+  $should-scale: false
 ) {
-	svg {
-		cursor: pointer;
-		width: $width;
-		height: $height;
-		transition: all $transition-time;
+  svg {
+    cursor: pointer;
+    width: $width;
+    height: $height;
+    transition: all $transition-time;
 
-		path,
-		rect,
-		circle,
-		polyline,
-		line {
-			transition: all $transition-time;
-			color: $color;
-		}
+    path,
+    rect,
+    circle,
+    polyline,
+    line {
+      transition: all $transition-time;
+      color: $color;
+    }
 
-		&:hover {
-			transition: all $transition-time;
-			@content;
+    &:hover {
+      transition: all $transition-time;
+      @content;
 
-			path,
-			rect,
-			circle,
-			polyline,
-			line {
-				transition: all $transition-time;
-				color: $hover-color;
-			}
-		}
-	}
+      @if ($should-scale) {
+        transform: scale(1.2);
+      }
+
+      path,
+      rect,
+      circle,
+      polyline,
+      line {
+        transition: all $transition-time;
+        color: $hover-color;
+      }
+    }
+  }
 }

@@ -57,23 +57,33 @@ body {
 }
 
 .right {
-  @include small-svg(white);
+  @include small-svg($color: white, $should-scale: true);
   position: fixed;
-  top: 50%;
   right: $container-padding;
-  background-color: $secondary-light;
-  box-shadow: 0 0 3px $primary;
   border-radius: 50px;
-  padding: 10px 0;
+  margin-right: 20px;
+  bottom: 0;
+  right: 0;
 
   ul {
     display: flex;
     flex-direction: column;
     list-style: none;
+    padding-bottom: 20px;
   }
 
-  li {
-    padding: 10px;
+  li:not(:last-child) {
+    padding-bottom: 20px;
+  }
+
+  &::after {
+    transition: all 600ms;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 120px;
+    background-color: $lighter-stale;
+    margin-left: 10px;
   }
 }
 
