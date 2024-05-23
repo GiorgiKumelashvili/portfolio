@@ -38,7 +38,7 @@ import { Image } from 'astro:assets';
           loading="lazy"
           width="100%"
           height="100%"
-          style="position: absolute; border: none;"
+          style="width:100%; height: 100%; position: absolute; border: none;"
           class="giphy-embed"
           allowfullscreen></iframe>
       </div>
@@ -74,30 +74,26 @@ import { Image } from 'astro:assets';
 
           <ul>
             <li class="main-tab">
-              <label for="tab1" role="button">
+              <label for="tab1">
                 <Fragment set:html={SkillsLogo} />
-                <br />
                 <span>Main Skills</span>
               </label>
             </li>
             <li class="main-tab">
-              <label for="tab2" role="button">
+              <label for="tab2">
                 <Fragment set:html={ExperienceLogo} />
-                <br />
                 <span>Experience</span>
               </label>
             </li>
             <li class="main-tab">
-              <label for="tab3" role="button">
+              <label for="tab3">
                 <Fragment set:html={AwardsLogo} />
-                <br />
                 <span>Awards</span>
               </label>
             </li>
             <li class="main-tab">
-              <label for="tab4" role="button">
+              <label for="tab4">
                 <Fragment set:html={MiscLogo} />
-                <br />
                 <span>Misc</span>
               </label>
             </li>
