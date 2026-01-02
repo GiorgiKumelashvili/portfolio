@@ -1,6 +1,6 @@
 ---
-import { consts } from '../../consts';
-import BurgerLogo from './icons/burger.svg?raw';
+import { consts } from "../../consts";
+import BurgerLogo from "./icons/burger.svg?raw";
 ---
 
 <header id="header">
@@ -22,15 +22,20 @@ import BurgerLogo from './icons/burger.svg?raw';
         <li style="cursor: pointer" class="nav-second-section">
           <span class="color-primary">#</span>About
         </li>
-        <li style="cursor: pointer" class="nav-third-section">
+        <!-- <li style="cursor: pointer" class="nav-third-section">
           <span class="color-primary">#</span>Projects
-        </li>
+        </li> -->
         <li style="cursor: pointer" class="nav-fourth-section">
           <span class="color-primary">#</span>Contact
         </li>
       </ul>
 
-      <a class="nav-resume" target="_blank" referrerpolicy="no-referrer" href={consts.CV}>
+      <a
+        class="nav-resume"
+        target="_blank"
+        referrerpolicy="no-referrer"
+        href={consts.CV}
+      >
         Resume
       </a>
     </div>
@@ -42,53 +47,75 @@ import BurgerLogo from './icons/burger.svg?raw';
 </header>
 
 <script>
-  import { toggleSidebar } from './shared';
+  import { toggleSidebar } from "./shared";
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const sidenavContainer = document.querySelector<HTMLElement>('.nav-link-container-mobile-blur');
-    const sidenavContent = document.querySelector<HTMLElement>('.nav-link-container-mobile');
+  window.addEventListener("DOMContentLoaded", () => {
+    const sidenavContainer = document.querySelector<HTMLElement>(
+      ".nav-link-container-mobile-blur"
+    );
+    const sidenavContent = document.querySelector<HTMLElement>(
+      ".nav-link-container-mobile"
+    );
 
-    document.querySelectorAll('.nav-second-section').forEach(el => {
-      el?.addEventListener('click', () => {
-        document.getElementById('second-section')?.scrollIntoView({ behavior: 'smooth' });
-        toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: false });
+    document.querySelectorAll(".nav-second-section").forEach((el) => {
+      el?.addEventListener("click", () => {
+        document
+          .getElementById("second-section")
+          ?.scrollIntoView({ behavior: "smooth" });
+        toggleSidebar({
+          content: sidenavContent,
+          container: sidenavContainer,
+          isOpen: false,
+        });
       });
     });
 
-    document.querySelectorAll('.nav-third-section').forEach(el => {
-      el?.addEventListener('click', () => {
-        document.getElementById('third-section')?.scrollIntoView({ behavior: 'smooth' });
-        toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: false });
+    document.querySelectorAll(".nav-third-section").forEach((el) => {
+      el?.addEventListener("click", () => {
+        document
+          .getElementById("third-section")
+          ?.scrollIntoView({ behavior: "smooth" });
+        toggleSidebar({
+          content: sidenavContent,
+          container: sidenavContainer,
+          isOpen: false,
+        });
       });
     });
 
-    document.querySelectorAll('.nav-fourth-section').forEach(el => {
-      el?.addEventListener('click', () => {
-        document.getElementById('fourth-section')?.scrollIntoView({ behavior: 'smooth' });
-        toggleSidebar({ content: sidenavContent, container: sidenavContainer, isOpen: false });
+    document.querySelectorAll(".nav-fourth-section").forEach((el) => {
+      el?.addEventListener("click", () => {
+        document
+          .getElementById("fourth-section")
+          ?.scrollIntoView({ behavior: "smooth" });
+        toggleSidebar({
+          content: sidenavContent,
+          container: sidenavContainer,
+          isOpen: false,
+        });
       });
     });
   });
 
-  const navbar = document.getElementById('header');
+  const navbar = document.getElementById("header");
   let lastScrollTop = 0;
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     let st = window.scrollY || document.documentElement.scrollTop;
 
     if (navbar) {
       if (st > lastScrollTop) {
         // downscroll code
-        navbar.classList.add('scroll');
+        navbar.classList.add("scroll");
       } else {
         // upscroll code
-        navbar.classList.remove('scroll');
+        navbar.classList.remove("scroll");
       }
 
       if (window.scrollY < 20) {
-        navbar.classList.remove('scroll-background');
+        navbar.classList.remove("scroll-background");
       } else {
-        navbar.classList.add('scroll-background');
+        navbar.classList.add("scroll-background");
       }
     }
 
