@@ -9,35 +9,50 @@ export const content = {
   experience: [
     {
       position:
-        "Senior Backend Engineer (Node/Nest/Postgresql/AWS/Kafka/Elastic)",
+        "Senior Software Engineer",
+      companyTitle: "Epam",
+      dateRange: "05/2024 - current",
+      description:
+        "- Currently working a Senior Software Engineer at EPAM working on DataPortal, building backend services and cloud infrastructure that power large-scale DataLake environments on AWS S3 and Azure Blob Storage. Focused on creating systems that make big data accessible, reliable, and ready for analysis, integrating with SQL databases and tools like Power BI, while collaborating closely with cross-functional teams to deliver scalable, secure, and efficient data solutions. Passionate about designing robust infrastructure that keeps complex data pipelines running smoothly and reliably.",
+    },
+    {
+      position:
+        "Senior Backend Engineer",
+      // position:
+      //   "Senior Backend Engineer (Node/Nest/Postgresql/AWS/Kafka/Elastic)",
       companyTitle: "Syniotec",
       dateRange: "07/2022 - 03/2024",
       description:
-        "- Created, maintained and updated features of their backend services, company used microservice architecture, utilizing kafka, elasticsearch, kubernetes and AWS service (Like Ec2, S3, RDS, IAM, Cloudwatch, API Gateway, etc). Created multiple feature like dynamic form builder, pdf/excel generation on big data. Created notification service, worked on multiple big data sets that included transportation, equipment, organization and some other services. Collaborated with mobile team as well.",
+        "- Built and maintained backend microservices with Kafka, Elasticsearch, and AWS, creating features like dynamic forms, PDF/Excel generation, and notifications. Collaborated with the mobile team.",
+      // description:
+      //   "- Created, maintained and updated features of their backend services, company used microservice architecture, utilizing kafka, elasticsearch, kubernetes and AWS service (Like Ec2, S3, RDS, IAM, Cloudwatch, API Gateway, etc). Created multiple feature like dynamic form builder, pdf/excel generation on big data. Created notification service, worked on multiple big data sets that included transportation, equipment, organization and some other services. Collaborated with mobile team as well.",
     },
     {
-      position: "Fullstack Developer (Node/Nest/React/Mysql/AWS)",
+      position: "Fullstack Developer",
+      // position: "Fullstack Developer (Node/Nest/React/Mysql/AWS)",
       companyTitle: "Citycom",
       dateRange: "04/2022 - 06/2022",
       description:
         "- Maintained and updated features of their inside admin web application, also updated messaging system and transaction microservices.",
     },
     {
-      position: "Fullstack Developer (Node/React/Laravel/Mysql)",
+      position: "Fullstack Developer",
+      // position: "Fullstack Developer (Node/React/Laravel/Mysql)",
       companyTitle: "WebApp LLC",
       dateRange: "05/2021 - 01/2022",
       description:
         "- Created CRM-style project from scratch, which is used till this day by company managers, for day to day use, Created multiple admin panel...",
     },
+    // {
+    //   position: "Fullstack Developer (Node/Nest/React)",
+    //   companyTitle: "StrangeElo",
+    //   dateRange: "07/2021 - 12/2021",
+    //   description:
+    //     "- Roles: System architect, partially front-end (react, typescript, nextjs), backend (nodejs, nestjs, typescript), DB architect (postgresql), devops (linux, shell, nginx)",
+    // },
     {
-      position: "Fullstack Developer (Node/Nest/React)",
-      companyTitle: "StrangeElo",
-      dateRange: "07/2021 - 12/2021",
-      description:
-        "- Roles: System architect, partially front-end (react, typescript, nextjs), backend (nodejs, nestjs, typescript), DB architect (postgresql), devops (linux, shell, nginx)",
-    },
-    {
-      position: "Frontend Developer (Vue)",
+      position: "Frontend Developer",
+      // position: "Frontend Developer (Vue)",
       companyTitle: "Fertimo",
       dateRange: "01/2020 - 11/2020",
       description:
